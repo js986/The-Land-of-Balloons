@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     public int volume;
-    // Start is called before the first frame update
+
     void Start()
     {
         switch (this.gameObject.tag)
@@ -20,11 +20,5 @@ public class Pickup : MonoBehaviour
                 volume = 5;
                 break;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
