@@ -42,11 +42,12 @@ public class PlayerControl : MonoBehaviour
     }
 
     void FixedUpdate(){
-        vertical_boost = PickupManager.instance.blue_counter;
-        horizontal_boost = PickupManager.instance.green_counter;
+        vertical_boost = PickupManager.instance.blue_counter/100;
+        horizontal_boost = PickupManager.instance.green_counter/100;
+
         transform.Translate(
-            _movementInput.x * _movementSpeedScale.x, 
-            _movementInput.y * _movementSpeedScale.y, 
+            _movementInput.x * (horizontal_boost + _movementSpeedScale.x), 
+            _movementInput.y * (vertical_boost + _movementSpeedScale.y), 
             0);
     }
 
