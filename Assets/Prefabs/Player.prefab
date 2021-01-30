@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1257625584419207553}
   - component: {fileID: 1257625584419207552}
   - component: {fileID: 1257625584419207559}
+  - component: {fileID: 2868570271235564450}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -154,3 +155,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeedScale: {x: 0.1, y: 0.1}
+--- !u!114 &2868570271235564450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb17c3b23019ef74c96ee8df915e38c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defense: 5
+  fuel_efficiency: 5
+  defense_level: 1
+  fuel_level: 1
