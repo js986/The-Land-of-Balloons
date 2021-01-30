@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6565992617307117554}
   - component: {fileID: 6565992617307117516}
   - component: {fileID: 6565992617307117517}
-  - component: {fileID: 3074126527479570583}
+  - component: {fileID: 280148120057039382}
   m_Layer: 3
   m_Name: Red Gas
   m_TagString: Red
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0
---- !u!114 &3074126527479570583
+--- !u!114 &280148120057039382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

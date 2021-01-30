@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6642969788442668521}
   - component: {fileID: 6642969788442668516}
   - component: {fileID: 6642969788442668523}
-  - component: {fileID: 2013212466710067746}
+  - component: {fileID: 5894695693313490765}
   m_Layer: 3
   m_Name: Green Gas
   m_TagString: Green
@@ -124,7 +124,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.51, y: 1.08}
   m_EdgeRadius: 0
---- !u!114 &2013212466710067746
+--- !u!114 &5894695693313490765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
