@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PickupManager : MonoBehaviour
 {
+    public static PickupManager instance;
     //counters for types of gas
     public int green_counter;
     public int blue_counter;
@@ -14,6 +15,7 @@ public class PickupManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         green_counter = 0;
         blue_counter = 0;
         red_counter = 0;
