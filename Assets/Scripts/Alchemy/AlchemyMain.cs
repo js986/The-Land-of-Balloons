@@ -36,7 +36,9 @@ public class AlchemyMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GreenGas = PickupManager.instance.green_counter;
+        RedGas = PickupManager.instance.red_counter;
+        BlueGas = PickupManager.instance.blue_counter;
     }
     //Transmutes from type to other type
     void transmute(GasType a,GasType b)

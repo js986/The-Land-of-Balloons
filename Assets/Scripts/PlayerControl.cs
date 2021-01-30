@@ -9,6 +9,9 @@ public class PlayerControl : MonoBehaviour
 
     Vector2 _movementInput;
 
+    float vertical_boost;
+    float horizontal_boost;
+
     [SerializeField] Vector2 _movementSpeedScale = new Vector2(1,1);
     Rigidbody2D _rb;
 
@@ -39,6 +42,8 @@ public class PlayerControl : MonoBehaviour
     }
 
     void FixedUpdate(){
+        vertical_boost = PickupManager.instance.blue_counter;
+        horizontal_boost = PickupManager.instance.green_counter;
         transform.Translate(
             _movementInput.x * _movementSpeedScale.x, 
             _movementInput.y * _movementSpeedScale.y, 
