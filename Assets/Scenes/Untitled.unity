@@ -199,11 +199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254960024}
   m_CullTransparentMesh: 1
---- !u!4 &592525891 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1257625584419207554, guid: fc52e0838ace53141b83007e30855657, type: 3}
-  m_PrefabInstance: {fileID: 1257625584763042731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610910215
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +363,6 @@ GameObject:
   - component: {fileID: 1003488405}
   - component: {fileID: 1003488404}
   - component: {fileID: 1003488403}
-  - component: {fileID: 1003488406}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -441,21 +435,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1003488406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003488402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c906f54b2324d44c90cdc65d75bad26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 592525891}
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &1176085123
 GameObject:
   m_ObjectHideFlags: 0
