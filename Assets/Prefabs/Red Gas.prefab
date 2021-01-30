@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6565992617307117554}
   - component: {fileID: 6565992617307117516}
   - component: {fileID: 6565992617307117517}
+  - component: {fileID: 280148120057039382}
   m_Layer: 3
   m_Name: Red Gas
   m_TagString: Red
@@ -123,3 +124,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0
+--- !u!114 &280148120057039382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565992617307117553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7035576962cdc4695fc7f17e04e878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freq: 2
+  magnitude: 0.25
