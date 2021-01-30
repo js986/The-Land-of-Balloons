@@ -62,4 +62,5 @@ public class PlayerControl : MonoBehaviour
         _rb.isKinematic = false;
     }
     #endregion
+
 }
