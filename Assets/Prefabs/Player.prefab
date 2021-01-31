@@ -158,6 +158,11 @@ MonoBehaviour:
   Red_Gas: {fileID: 6565992617307117553, guid: 84b2001ffea0bd6428af9d65e12efa86, type: 3}
   Blue_Gas: {fileID: 7702947183516199916, guid: 5fb72bd743c21f14ebf42e490be36b34, type: 3}
   Green_Gas: {fileID: 6642969788442668520, guid: 605799a308b61fb4aa4cfd485bcacfd2, type: 3}
+  current:
+    bottom_bound: 0
+    left_bound: 0
+    right_bound: 0
+    top_bound: 0
 --- !u!114 &3227944897932169527
 MonoBehaviour:
   m_ObjectHideFlags: 0
