@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static MasterControls;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour, IMainActions
 {
     MasterControls input;
 
@@ -20,28 +21,17 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         input = new MasterControls();
+        input.Main.SetCallbacks(this);
     }
-
     void Start(){
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
         _sr.sprite = sprites[0];
     }
     private void OnEnable(){
-
         input.Enable();
-        input.Main.Horizontal.performed += OnHorizontalMovement;
-        input.Main.Horizontal.canceled += OnHorizontalMovement;
-        input.Main.Vertical.performed += OnVerticalMovement;
-        input.Main.Vertical.canceled += OffVerticalMovement;
     }
-
     private void OnDisable(){
-
-        input.Main.Horizontal.performed -= OnHorizontalMovement;
-        input.Main.Horizontal.canceled -= OnHorizontalMovement;
-        input.Main.Vertical.performed -= OnVerticalMovement;
-        input.Main.Vertical.canceled -= OffVerticalMovement;
         input.Disable();
     }
 
@@ -77,17 +67,9 @@ public class PlayerControl : MonoBehaviour
     }
 
     #region Action Handlers
-    void OnHorizontalMovement(InputAction.CallbackContext ctx){
-
-        _movementInput.x = ctx.ReadValue<float>();
-    }
-
-    void OnVerticalMovement(InputAction.CallbackContext ctx){
-        _movementInput.y = ctx.ReadValue<float>();
-    }
-
-    void OffVerticalMovement(InputAction.CallbackContext ctx){
-        _movementInput.y = 0;
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        _movementInput = context.ReadValue<Vector2>();
     }
     #endregion
 
