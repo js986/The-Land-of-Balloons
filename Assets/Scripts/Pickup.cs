@@ -21,4 +21,11 @@ public class Pickup : MonoBehaviour
                 break;
         }
     }
+    private void Update()
+    {
+            if (this.transform.position.y < PickupSpawner.instance.current.bottom_bound || this.transform.position.y > PickupSpawner.instance.current.top_bound)
+            {
+                Destroy(this.gameObject);
+            }
+    }
 }
