@@ -17,45 +17,32 @@ public class BirdSpawner : MonoBehaviour
         instance = this;
     }   
 
-     void Start()
-    {
-        // StartCoroutine(SpawnBird(prefab,))
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnBird(GridManager.GridSquare grid){
 
         int direction = Random.Range(0, 2);
 
-        float dirRotation = 0;
+        bool spriteDir = false;
         float dirX = 0;
         switch (direction)
         {
             case 0:
                 dirX = grid.left_bound;
-                dirRotation = 0;
+                spriteDir = false;
                 break;
             case 1:
                 dirX = grid.right_bound;
-                dirRotation = 180;      
+                spriteDir = true;      
                 break;
-            // default:
-            //     Debug.LogWarning ("oopsie");
-            //     break;
         }
-        print (dirX);
-        Vector3 pos = new Vector3 (dirX, grid.top_bound - 25, 0);
+        
+        Vector3 pos = new Vector3 (dirX, grid.top_bound - ( 25 + Random.Range(-3f, 5f)), 0);
 
-        var burd = Instantiate(birdPrefab, pos, Quaternion.Euler(0,dirRotation, 0));        
+        var burd = Instantiate(birdPrefab);       
+        burd.transform.position = pos;
+        burd.GetComponent<SpriteRenderer>().flipX = spriteDir;
+        burd.GetComponent<Bird>().spriteFlip = spriteDir;
+         
     }
-
-
 
     /// <summary>
     /// Returns whether the cooldown is available for use
