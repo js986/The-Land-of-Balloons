@@ -24,6 +24,7 @@ public class GridManager : MonoBehaviour
     public GridSquare current;
     public static GridManager instance;
     Vector3 position;
+    public GameObject Rain;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +69,14 @@ public class GridManager : MonoBehaviour
             !WindGustSpawner.instance.isCooldown())
         {
             WindGustSpawner.instance.SpawnGusts(current);
+        }
+        if (transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound)
+        {
+            Rain.SetActive(true);
+        }
+        else
+        {
+            Rain.SetActive(false);
         }
     }
 
