@@ -44,16 +44,20 @@ public class GridManager : MonoBehaviour
             {
                 grid.Add(current);
                 PickupSpawner.instance.SpawnPickups(current);
+                if (transform.position.y > 135 && transform.position.y < 275)
+                {
+                    ThunderSpawner.instance.SpawnCloud(current);
+                }
             }
         }
 
-        if (transform.position.y < 135 && BirdSpawner.instance.UseCooldown()){
+        if (transform.position.y < 130 && BirdSpawner.instance.UseCooldown()){
             BirdSpawner.instance.SpawnBird(current);
         }
     }
 
     void OnDrawGizmos(){
 
-        Gizmos.DrawCube( new Vector3 ( current.left_bound + 9, current.top_bound - 20, 0 ), new Vector3(9, 20, 0));
+        Gizmos.DrawCube( new Vector3 ( current.left_bound + 9, current.top_bound - 20, 0 ), new Vector3(18, 40, 0));
     }
 }
