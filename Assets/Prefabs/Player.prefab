@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 6406399451098774623}
   - component: {fileID: 1257625584419207553}
   - component: {fileID: 4070153274956371416}
+  - component: {fileID: 5306488171461712280}
+  - component: {fileID: 1960640931662456518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -142,6 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeedScale: {x: 0.1, y: 0.1}
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &3472989145160082163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,15 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcc9ed174f52244da2b531b9db04c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: []
   Red_Gas: {fileID: 6565992617307117553, guid: 84b2001ffea0bd6428af9d65e12efa86, type: 3}
   Blue_Gas: {fileID: 7702947183516199916, guid: 5fb72bd743c21f14ebf42e490be36b34, type: 3}
   Green_Gas: {fileID: 6642969788442668520, guid: 605799a308b61fb4aa4cfd485bcacfd2, type: 3}
-  current:
-    bottom_bound: 0
-    left_bound: 0
-    right_bound: 0
-    top_bound: 0
+  altitude: 0
+  altitude_text: {fileID: 0}
 --- !u!114 &3227944897932169527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,10 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 0}
-  defense: 5
-  max_defense: 100
-  fuel: 100
-  max_fuel: 100
   defense_level: 1
   fuel_level: 1
   fuel_bar: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0.3, z: -10}
 --- !u!58 &1257625584419207553
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -240,3 +240,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7, y: 1.7510815}
   m_EdgeRadius: 0
+--- !u!114 &5306488171461712280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24ef369c4380124e89959228ca6b89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  birdPrefab: {fileID: 7897574702895038786, guid: ebc51b2ab0b34154db21b64580692351, type: 3}
+--- !u!114 &1960640931662456518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec95877943035134b84b0d24262fd00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: []
+  current:
+    bottom_bound: 0
+    left_bound: 0
+    right_bound: 0
+    top_bound: 0
