@@ -53,6 +53,9 @@ public class GridManager : MonoBehaviour
 
         if (transform.position.y < 130 && BirdSpawner.instance.UseCooldown()){
             BirdSpawner.instance.SpawnBird(current);
+        }else if(transform.position.y > 275 && transform.position.y < 415 && !WindGustSpawner.instance.isCooldown())
+        {
+            WindGustSpawner.instance.SpawnGusts(current);
         }
     }
 
