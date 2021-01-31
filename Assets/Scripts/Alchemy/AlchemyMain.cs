@@ -12,6 +12,8 @@ public class AlchemyMain : MonoBehaviour
     int RedGas = 0;   //Horizontal Speed increase [Pull from player]
     int BlueGas = 0;  //Up and down speed increase [Pull from player]
 
+    UpgradeManager shop;
+
     public int conversitionFactor = 5;
     /*Idea of what the icon layout is going to be like
      *        ________
@@ -28,7 +30,13 @@ public class AlchemyMain : MonoBehaviour
     [SerializeField] Image current;
     [SerializeField] Image right;
 
-
+    public enum TradeType
+    {
+        Repair,
+        Refuel,
+        UpgradeDefense,
+        UpgradeEngine,
+    }
     enum GasType
     {
         Green,
@@ -40,7 +48,7 @@ public class AlchemyMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        shop = GameObject.FindGameObjectWithTag("Player").GetComponent<UpgradeManager>();
     }
 
     // Update is called once per frame
@@ -57,6 +65,11 @@ public class AlchemyMain : MonoBehaviour
 
         if (Keyboard.current.qKey.wasPressedThisFrame) switchCurrentGas(true);
         else if (Keyboard.current.eKey.wasPressedThisFrame) switchCurrentGas(false);
+
+        if (Keyboard.current.uKey.wasPressedThisFrame) upgradeTransaction(TradeType.Refuel);
+        if (Keyboard.current.iKey.wasPressedThisFrame) upgradeTransaction(TradeType.Repair);
+        if (Keyboard.current.oKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeDefense);
+        if (Keyboard.current.pKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeEngine);
         /*
         if (Input.GetKeyDown(KeyCode.A)) switchCurrentGas(false);
         else if (Input.GetKeyDown(KeyCode.D)) switchCurrentGas(true);
@@ -180,8 +193,43 @@ public class AlchemyMain : MonoBehaviour
 
     }
 
+    void upgradeTransaction(TradeType trade)
+    {
+        switch (trade)
+        {
+            case TradeType.Refuel:
+                if (RedGas > 0) {
+                    RedGas--;
+                    shop.fuel += 1;
+                }
+                break;
 
+            case TradeType.Repair:
+                if (RedGas >0 && BlueGas > 0)
+                {
+                    RedGas--;
+                    BlueGas--;
+                    shop.defense += 1;
+                }
+                break;
 
+            case TradeType.UpgradeDefense:
+                if (GreenGas > 10 && BlueGas > 10)
+                {
+                    GreenGas -=10;
+                    BlueGas -=10;
+                    shop.UpgradeDefense();
+                }
+                break;
 
-
+            case TradeType.UpgradeEngine:
+                if (GreenGas > 10 && RedGas > 10)
+                {
+                    RedGas -= 10;
+                    GreenGas -= 10;
+                    shop.UpgradeFuelCapacity();
+                }
+                break;
+        }
+    }
 }
