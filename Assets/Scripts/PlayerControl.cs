@@ -48,7 +48,12 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(
             _movementInput.x * (horizontal_boost + _movementSpeedScale.x), 
             _movementInput.y * (vertical_boost + _movementSpeedScale.y), 
-            0);
+            0
+        );
+
+        if (_movementInput.y > 0)
+            _rb.velocity = Vector2.zero;
+    
     }
 
     #region Action Handlers
@@ -59,13 +64,10 @@ public class PlayerControl : MonoBehaviour
 
     void OnVerticalMovement(InputAction.CallbackContext ctx){
         _movementInput.y = ctx.ReadValue<float>();
-        _rb.isKinematic = true;
-        _rb.velocity = Vector2.zero;
     }
 
     void OffVerticalMovement(InputAction.CallbackContext ctx){
         _movementInput.y = 0;
-        _rb.isKinematic = false;
     }
     #endregion
 

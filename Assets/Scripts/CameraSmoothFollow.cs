@@ -15,10 +15,15 @@ public class CameraSmoothFollow : MonoBehaviour
         target = transform;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     }
     void FixedUpdate(){
-        
-        Vector3 desiredPos = target.position;
-        Vector3 smoothedPos = Vector3.Lerp(cam.transform.position, desiredPos, smoothSpeed);
 
-        cam.transform.position = smoothedPos + offset;
+        float desiredY = target.position.y;
+        float smoothedY = Mathf.Lerp(cam.transform.position.y, desiredY, smoothSpeed);
+
+        cam.transform.position = new Vector3(cam.transform.position.x, smoothedY, 0) + offset;
+
+        // Vector3 desiredPos = target.position;
+        // Vector3 smoothedPos = Vector3.Lerp(cam.transform.position, desiredPos, smoothSpeed);
+
+        // cam.transform.position = smoothedPos + offset;
     }
 }
