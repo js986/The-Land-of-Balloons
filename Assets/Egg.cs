@@ -24,7 +24,7 @@ public class Egg : MonoBehaviour
 
             print ("hit player");
             var um = col.GetComponent<UpgradeManager>();
-            um.SetDefense(um.defense - 5);
+            um.SetDefense(um.defense - 2);
             Destroy(gameObject);
         }
     }

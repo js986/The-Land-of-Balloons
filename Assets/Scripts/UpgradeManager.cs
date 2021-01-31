@@ -21,7 +21,7 @@ public class UpgradeManager : MonoBehaviour
         pc = this.GetComponent<PlayerControl>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         UpdateFuelBar();
         UpdateDefenseBar();
