@@ -57,13 +57,13 @@ public class PickupSpawner : MonoBehaviour
                 Gas.transform.position = new Vector3(rand_x, rand_y, 0);
                 continue;
             }
-            if (rand_type > 6)
+            if (rand_type > 7)
             {
                 GameObject Gas = Instantiate(Green_Gas);
                 Gas.transform.position = new Vector3(rand_x, rand_y, 0);
                 continue;
             }
-            if (rand_type <6)
+            if (rand_type <5)
             {
                 GameObject Gas = Instantiate(Red_Gas);
                 Gas.transform.position = new Vector3(rand_x, rand_y, 0);
