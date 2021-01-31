@@ -37,17 +37,14 @@ public class WindGustSpawner : MonoBehaviour
     {
         int direction = Random.Range(0, 2);
 
-        float dirRotation = 0;
         float dirX = 0;
         switch (direction)
         {
             case 0:
                 dirX = grid.left_bound;
-                dirRotation = 0;
                 break;
             case 1:
                 dirX = grid.right_bound;
-                dirRotation = 180;
                 break;             
         }
 

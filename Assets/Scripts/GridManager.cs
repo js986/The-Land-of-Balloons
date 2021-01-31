@@ -31,7 +31,7 @@ public class GridManager : MonoBehaviour
         current = new GridSquare(30, 10, -9, 10);
         grid = new List<GridSquare>();
         grid.Add(current);
-        PickupSpawner.instance.SpawnPickups(current);
+        PickupSpawner.instance.SpawnPickups(current, regions);
     }
 
     // Update is called once per frame
@@ -45,13 +45,13 @@ public class GridManager : MonoBehaviour
             if (!grid.Contains(current))
             {
                 grid.Add(current);
-                PickupSpawner.instance.SpawnPickups(current);
-                if (transform.position.y > 535 && transform.position.y < 650)
+                PickupSpawner.instance.SpawnPickups(current,regions);
+                if (transform.position.y < regions[4].upperExitBound && transform.position.y > regions[3].lowerEntryBound +70)
                 {
                     AstroidSpawner.instance.SpawnAstroid(current);
                 }
 
-                if (transform.position.y > 130 && transform.position.y < 260)
+                if (transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound)
                 {
                     ThunderSpawner.instance.SpawnCloud(current);
                 }
@@ -64,7 +64,7 @@ public class GridManager : MonoBehaviour
         {
             BirdSpawner.instance.SpawnBird(current);
         }
-        else if(transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound && 
+        else if(transform.position.y < regions[2].upperExitBound && transform.position.y > regions[2].lowerEntryBound && 
             !WindGustSpawner.instance.isCooldown())
         {
             WindGustSpawner.instance.SpawnGusts(current);
