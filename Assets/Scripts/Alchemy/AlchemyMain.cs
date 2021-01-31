@@ -200,7 +200,8 @@ public class AlchemyMain : MonoBehaviour
             case TradeType.Refuel:
                 if (RedGas > 0) {
                     RedGas--;
-                    shop.fuel += 1;
+                    shop.SetFuel(shop.fuel + 5);
+                    //shop.fuel += 1; //Change to setFuel
                 }
                 break;
 
@@ -209,7 +210,8 @@ public class AlchemyMain : MonoBehaviour
                 {
                     RedGas--;
                     BlueGas--;
-                    shop.defense += 1;
+                    shop.SetDefense(shop.defense + 5);
+                    //shop.defense += 1; //change to setDef
                 }
                 break;
 

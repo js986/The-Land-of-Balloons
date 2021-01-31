@@ -6,9 +6,10 @@ public class WindGustSpawner : MonoBehaviour
 {
     public static WindGustSpawner instance;
     public GameObject windFab;
-
-    const float cooldown = 5;
+    public float windSpeed = 5;
+    const float cooldown = 1;
     float lastTime = 0;
+    public float yRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,12 +50,22 @@ public class WindGustSpawner : MonoBehaviour
                 dirRotation = 180;
                 break;             
         }
-        
-        Vector3 pos = new Vector3(dirX, grid.top_bound - 25, 0);
 
-        GameObject wind = Instantiate(windFab, pos, Quaternion.Euler(0, dirRotation, 0));
-        if (direction == 0) wind.GetComponent<WindGust>().direction = new Vector3(1, 0, 0);
-        else wind.GetComponent<WindGust>().direction = new Vector3(-1, 0, 0);
+        Vector3 pos = new Vector3(dirX, grid.top_bound - (25 + Random.Range(-yRange, yRange)), 0);
+
+        GameObject wind = Instantiate(windFab);
+        wind.GetComponent<WindGust>().speed = windSpeed;
+        wind.transform.position = pos;
+        if (direction == 0)
+        {
+            wind.GetComponent<WindGust>().direction = new Vector3(1, 0, 0);
+            wind.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            wind.GetComponent<WindGust>().direction = new Vector3(-1, 0, 0);
+            wind.GetComponent<SpriteRenderer>().flipX = true;
+        }    
     }
     /*
      * 

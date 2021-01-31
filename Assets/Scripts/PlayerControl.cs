@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour, IMainActions
 {
     MasterControls input;
 
+    [SerializeField]
     Vector2 _movementInput;
 
     float vertical_boost;

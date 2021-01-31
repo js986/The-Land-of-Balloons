@@ -20,7 +20,7 @@ public class GridManager : MonoBehaviour
         }
     }
     [SerializeField] public List<GridSquare> grid;
-    [SerializeField] public GameObject lowerSpaceBound;
+    [SerializeField]public List<Region> regions;
     public GridSquare current;
     public static GridManager instance;
     Vector3 position;
@@ -58,8 +58,16 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        if (transform.position.y < 130 && BirdSpawner.instance.UseCooldown()){
+        // Spawn enemies based on region, region list editable in inspector
+        if ((transform.position.y < regions[0].upperExitBound && transform.position.y > regions[0].lowerEntryBound) && 
+            BirdSpawner.instance.UseCooldown())
+        {
             BirdSpawner.instance.SpawnBird(current);
+        }
+        else if(transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound && 
+            !WindGustSpawner.instance.isCooldown())
+        {
+            WindGustSpawner.instance.SpawnGusts(current);
         }
     }
 
