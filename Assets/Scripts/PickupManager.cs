@@ -12,6 +12,8 @@ public class PickupManager : MonoBehaviour
     public Text green_text;
     public Text blue_text;
     public Text red_text;
+
+    public UpgradeManager _um;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class PickupManager : MonoBehaviour
         green_counter = 0;
         blue_counter = 0;
         red_counter = 0;
+        _um = this.GetComponent<UpgradeManager>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class PickupManager : MonoBehaviour
             {
                 case "Red":
                     red_counter += gas.volume;
+                    _um.SetFuel(_um.fuel + 5.0f);
                     break;
                 case "Green":
                     green_counter += gas.volume;
