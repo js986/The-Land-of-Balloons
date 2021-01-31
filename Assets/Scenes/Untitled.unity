@@ -455,6 +455,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 573720586}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7a4a27991d4c74e9ee26c0f1d9ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  astroid_1: {fileID: 3928538488999518782, guid: 0fe22eea38b3a554f8f947bf9318cef0, type: 3}
+  astroid_2: {fileID: 5274991951682576449, guid: a815704da2688fb459f6df34d10e2e85, type: 3}
+--- !u!114 &573720587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573720586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d44e96116ad40f4cada7f1b7925148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -2331,6 +2346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1960640931662456518, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: lowerSpaceBound
+      value: 
+      objectReference: {fileID: 1059326916}
     - target: {fileID: 2868570271235564450, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: fuel_bar
       value: 
