@@ -372,6 +372,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254960024}
   m_CullTransparentMesh: 1
+--- !u!1 &347573241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1257625584419207565, guid: fc52e0838ace53141b83007e30855657, type: 3}
+  m_PrefabInstance: {fileID: 1257625584763042731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &347573252
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347573241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &610910215
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +579,7 @@ Transform:
   - {fileID: 2092641059}
   - {fileID: 1805931381}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003488402
 GameObject:
@@ -1855,6 +1879,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1257625584419207555, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d5622aba58bf9245a3cfb8c3ed1d178, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f346fd46dc42614ea2fae88b124256b, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be8dc73a9ba830459b6439f21d78f30, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d875b8c7b52b5c344bf2157d1ee89a65, type: 3}
     - target: {fileID: 1257625584419207564, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: red_text
       value: 
@@ -1887,5 +1935,13 @@ PrefabInstance:
       propertyPath: defense_bar
       value: 
       objectReference: {fileID: 1241444598}
+    - target: {fileID: 4070153274956371416, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070153274956371416, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc52e0838ace53141b83007e30855657, type: 3}
