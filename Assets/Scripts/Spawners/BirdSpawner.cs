@@ -37,7 +37,7 @@ public class BirdSpawner : MonoBehaviour
                 break;
         }
         
-        Vector3 pos = new Vector3 (dirX, grid.top_bound - ( 25 + Random.Range(-yRange, yRange)), 0);
+        Vector3 pos = new Vector3 (dirX, grid.top_bound - Random.Range(-yRange, yRange), 0);
 
         var burd = Instantiate(birdPrefab);       
         burd.transform.position = pos;

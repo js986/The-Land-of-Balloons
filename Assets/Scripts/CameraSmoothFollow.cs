@@ -19,7 +19,8 @@ public class CameraSmoothFollow : MonoBehaviour
         float desiredY = target.position.y;
         float smoothedY = Mathf.Lerp(cam.transform.position.y, desiredY, smoothSpeed);
 
-        cam.transform.position = new Vector3(cam.transform.position.x, smoothedY, 0) + offset;
+        cam.transform.position = new Vector3(cam.transform.position.x, Mathf.Clamp(smoothedY, 0, 225), 0) + offset;
+        
 
         // Vector3 desiredPos = target.position;
         // Vector3 smoothedPos = Vector3.Lerp(cam.transform.position, desiredPos, smoothSpeed);

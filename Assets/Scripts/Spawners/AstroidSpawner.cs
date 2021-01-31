@@ -35,8 +35,8 @@ public class AstroidSpawner : MonoBehaviour
         for (int i = 0; i < 50; i++)
         {
             rand_x = Random.Range(grid.left_bound, grid.right_bound);
-            rand_y = Random.Range(grid.top_bound - 15f, grid.top_bound - 10f);
-            Vector2 spawnPoint = new Vector2(rand_x, grid.top_bound - 15f);
+            rand_y = Random.Range(grid.top_bound - 5, grid.top_bound);
+            Vector2 spawnPoint = new Vector2(rand_x, grid.top_bound - 5);
             type = Random.Range(0, 2);
             GameObject astroid_final = (type == 0) ? astroid_1 : astroid_2;
             radius = astroid_final.GetComponent<CircleCollider2D>().radius;

@@ -37,35 +37,35 @@ public class PickupSpawner : MonoBehaviour
         int blue_rate = 0;
         if (transform.position.y < regions[0].upperExitBound && transform.position.y > regions[0].lowerEntryBound)
         {
-            rand_num = Random.Range(25, 36);
+            rand_num = Random.Range(15, 26);
             red_rate = 50;
             green_rate = 30;
             blue_rate = 10;
         }
         if (transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound)
         {
-            rand_num = Random.Range(25, 36);
+            rand_num = Random.Range(15, 26);
             red_rate = 20;
             green_rate = 50;
             blue_rate = 30;
         }
         if (transform.position.y < regions[2].upperExitBound && transform.position.y > regions[2].lowerEntryBound)
         {
-            rand_num = Random.Range(25, 31);
+            rand_num = Random.Range(15, 21);
             red_rate = 50;
             green_rate = 40;
             blue_rate = 5;
         }
         if (transform.position.y < regions[3].upperExitBound && transform.position.y > regions[3].lowerEntryBound)
         {
-            rand_num = Random.Range(20, 26);
+            rand_num = Random.Range(10, 15);
             red_rate = 50;
             green_rate = 30;
             blue_rate = 10;
         }
         if (transform.position.y < regions[4].upperExitBound && transform.position.y > regions[4].lowerEntryBound)
         {
-            rand_num = Random.Range(15, 21);
+            rand_num = Random.Range(5, 10);
             red_rate = 30;
             green_rate = 20;
             blue_rate = 10;

@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementInput: {x: 0, y: 0}
-  _movementSpeedScale: {x: 0.1, y: 0.1}
+  vertical_boost: 0
+  horizontal_boost: 0
+  _movementSpeedScale: {x: 0.1, y: 0.05}
   sprites:
   - {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
   - {fileID: 21300000, guid: 6d5622aba58bf9245a3cfb8c3ed1d178, type: 3}
@@ -251,25 +253,26 @@ MonoBehaviour:
   grid: []
   regions:
   - name: Blue Skies
-    lowerEntryBound: 20
-    upperExitBound: 135
+    lowerEntryBound: 0
+    upperExitBound: 50
   - name: Storm
-    lowerEntryBound: 135
-    upperExitBound: 275
+    lowerEntryBound: 50
+    upperExitBound: 100
   - name: Upper Atmosphere
-    lowerEntryBound: 275
-    upperExitBound: 415
+    lowerEntryBound: 100
+    upperExitBound: 150
   - name: Radioactive Zone
-    lowerEntryBound: 415
-    upperExitBound: 555
+    lowerEntryBound: 150
+    upperExitBound: 200
   - name: Near Space
-    lowerEntryBound: 555
-    upperExitBound: 690
+    lowerEntryBound: 200
+    upperExitBound: 250
   current:
     bottom_bound: 0
     left_bound: 0
     right_bound: 0
     top_bound: 0
+  Rain: {fileID: 0}
 --- !u!60 &987916930125166250
 PolygonCollider2D:
   m_ObjectHideFlags: 0
