@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Cutscene : MonoBehaviour
 {
-    [SerializeField]Sprite[] cutscene_images = new Sprite[9];
+    [SerializeField]Sprite[] cutscene_images = new Sprite[7];
     Image current_image;
     int i;
     // Start is called before the first frame update
@@ -24,9 +24,10 @@ public class Cutscene : MonoBehaviour
     public void ChangeImage()
     {
         i++;
-        if(i<9)current_image.sprite = cutscene_images[i];
+        if(i<cutscene_images.Length)current_image.sprite = cutscene_images[i];
         else
         {
+            Application.Quit();
             this.gameObject.SetActive(false);
         }
     }
