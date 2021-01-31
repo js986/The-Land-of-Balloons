@@ -21,7 +21,7 @@ public class UpgradeManager : MonoBehaviour
         pc = this.GetComponent<PlayerControl>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         UpdateFuelBar();
         UpdateDefenseBar();
@@ -47,7 +47,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
 
-    void UpgradeDefense()
+    public void UpgradeDefense()
     {
         defense_bar.maxValue += 50f;
         defense_bar.value += 50f;
@@ -55,7 +55,7 @@ public class UpgradeManager : MonoBehaviour
         defense_level++;
     }
 
-    void UpgradeFuelCapacity()
+    public void UpgradeFuelCapacity()
     {
         fuel_bar.value += 50f;
         fuel_bar.maxValue += 50f;
@@ -65,7 +65,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void SetDefense(float value)
     {
-        if (value > fuel_bar.maxValue)
+        if (value >= fuel_bar.maxValue)
         {
             defense_bar.value = defense_bar.maxValue;
             defense = defense_bar.maxValue;
@@ -80,7 +80,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void SetFuel(float value)
     {
-        if (value > fuel_bar.maxValue)
+        if (value >= fuel_bar.maxValue)
         {
             fuel_bar.value = fuel_bar.maxValue;
             fuel = fuel_bar.maxValue;

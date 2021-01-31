@@ -77,7 +77,7 @@ public class AlchemyMain : MonoBehaviour
         switch (a)
         {
             case GasType.Green:
-                if (GreenGas <= 1)
+                if (GreenGas <= conversitionFactor-1)
                 {
                     cantrade = false;
                     break;
@@ -85,7 +85,7 @@ public class AlchemyMain : MonoBehaviour
                 GreenGas -= conversitionFactor;
                 break;
             case GasType.Red:
-                if (RedGas <= 1)
+                if (RedGas <= conversitionFactor - 1)
                 {
                     cantrade = false;
                     break;
@@ -93,7 +93,7 @@ public class AlchemyMain : MonoBehaviour
                 RedGas -= conversitionFactor;
                 break;
             case GasType.Blue:
-                if (BlueGas <= 1)
+                if (BlueGas <= conversitionFactor - 1)
                 {
                     cantrade = false;
                     break;
