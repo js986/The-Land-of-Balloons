@@ -21,17 +21,28 @@ public class UpgradeManager : MonoBehaviour
         pc = this.GetComponent<PlayerControl>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         UpdateFuelBar();
+        UpdateDefenseBar();
+    }
+    
+    void FixedUpdate(){
+        fuel -= 0.02f;
     }
 
     void UpdateFuelBar()
     {
         if (fuel_bar.value > 0f)
         {
-            fuel_bar.value -= 0.02f;
-            fuel -= 0.02f;
+            fuel_bar.value = fuel;
+        }
+    }
+
+    void UpdateDefenseBar(){
+        if (defense_bar.value > 0f)
+        {
+            defense_bar.value = defense;
         }
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class BirdSpawner : MonoBehaviour
 {
     public static BirdSpawner instance;
+
+    public float yRange;
     public float duration;          // Duration of the given cooldown
     float _lastUsed  = 0;           // Last time this cooldown was used
     public float lastUsed{
@@ -35,7 +37,7 @@ public class BirdSpawner : MonoBehaviour
                 break;
         }
         
-        Vector3 pos = new Vector3 (dirX, grid.top_bound - ( 25 + Random.Range(-3f, 5f)), 0);
+        Vector3 pos = new Vector3 (dirX, grid.top_bound - ( 25 + Random.Range(-yRange, yRange)), 0);
 
         var burd = Instantiate(birdPrefab);       
         burd.transform.position = pos;

@@ -8,13 +8,11 @@ public class Bird : MonoBehaviour
     public bool spriteFlip = true;
     float direction = 1; // -1 if from right to left vice versa
     public GameObject eggPrefab;
-    float eggDelay = 1f;
+    public float eggDelay = 1f;
+    bool canMove = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        eggDelay *= Random.Range(.5f, 1.5f);
-        print(eggDelay);
         StartCoroutine(LayEgg(eggDelay));
         
         if (spriteFlip)direction = -1;
@@ -25,7 +23,8 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(speed * direction, 0, 0);
+        if (canMove)
+            transform.Translate(speed * direction, 0, 0);
     }
 
     IEnumerator LayEgg(float delay){
@@ -34,6 +33,16 @@ public class Bird : MonoBehaviour
             yield return new WaitForSeconds(eggDelay);
             
             Instantiate(eggPrefab, transform.position, Quaternion.identity);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col){
+        
+        if (col.collider.CompareTag("Player")){
+
+            canMove = false;
+            gameObject.AddComponent<Rigidbody2D>();
+            var um = col.collider.GetComponent<UpgradeManager>();
+            um.SetDefense(um.defense - 5);
         }
     }
 }

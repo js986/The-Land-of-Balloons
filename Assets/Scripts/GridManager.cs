@@ -58,6 +58,6 @@ public class GridManager : MonoBehaviour
 
     void OnDrawGizmos(){
 
-        Gizmos.DrawCube( new Vector3 ( current.left_bound + 9, current.top_bound - 20, 0 ), new Vector3(18, 40, 0));
+        // Gizmos.DrawCube( new Vector3 ( current.left_bound + 9, current.top_bound - 20, 0 ), new Vector3(18, 40, 0));
     }
 }
