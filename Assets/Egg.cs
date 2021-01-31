@@ -23,7 +23,8 @@ public class Egg : MonoBehaviour
         if (col.CompareTag("Player")){
 
             print ("hit player");
-            col.GetComponent<UpgradeManager>().defense -= 5;
+            var um = col.GetComponent<UpgradeManager>();
+            um.SetDefense(um.defense - 5);
             Destroy(gameObject);
         }
     }
