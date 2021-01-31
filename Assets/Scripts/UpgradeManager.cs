@@ -6,10 +6,6 @@ using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
     public PlayerControl pc;
-    public float defense = 100.0f;
-    public float max_defense = 100.0f;
-    public float fuel = 100.0f;
-    public float max_fuel = 100.0f;
     public int defense_level = 1;
     public int fuel_level = 1;
 
@@ -30,13 +26,15 @@ public class UpgradeManager : MonoBehaviour
 
     void UpdateFuelBar()
     {
-        fuel_bar.value -=0.02f;
+        if (fuel_bar.value > 0f)
+        {
+            fuel_bar.value -= 0.02f;
+        }
     }
 
 
     void UpgradeDefense()
     {
-        max_defense += 50f;
         defense_bar.maxValue += 50f;
         defense_bar.value += 50f;
         defense_level++;
@@ -44,7 +42,6 @@ public class UpgradeManager : MonoBehaviour
 
     void UpgradeFuelCapacity()
     {
-        max_fuel += 50f;
         fuel_bar.value += 50f;
         fuel_bar.maxValue += 50f;
         fuel_level++;
@@ -52,13 +49,11 @@ public class UpgradeManager : MonoBehaviour
 
     void SetDefense(float value)
     {
-        defense = value;
         defense_bar.value = value;
     }
 
     void SetFuel(float value)
     {
-        fuel = value;
         fuel_bar.value = value;
     }
 }

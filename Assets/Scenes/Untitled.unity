@@ -2027,6 +2027,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1257625584419207555, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d5622aba58bf9245a3cfb8c3ed1d178, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f346fd46dc42614ea2fae88b124256b, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be8dc73a9ba830459b6439f21d78f30, type: 3}
+    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d875b8c7b52b5c344bf2157d1ee89a65, type: 3}
     - target: {fileID: 1257625584419207564, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: red_text
       value: 

@@ -14,6 +14,8 @@ public class PlayerControl : MonoBehaviour, IMainActions
     float horizontal_boost;
 
     [SerializeField] Vector2 _movementSpeedScale = new Vector2(1,1);
+    [SerializeField] Sprite[] sprites = new Sprite[5];
+    SpriteRenderer _sr;
     Rigidbody2D _rb;
 
     void Awake()
@@ -23,6 +25,8 @@ public class PlayerControl : MonoBehaviour, IMainActions
     }
     void Start(){
         _rb = GetComponent<Rigidbody2D>();
+        _sr = GetComponent<SpriteRenderer>();
+        _sr.sprite = sprites[0];
     }
     private void OnEnable(){
         input.Enable();
@@ -34,6 +38,22 @@ public class PlayerControl : MonoBehaviour, IMainActions
     void FixedUpdate(){
         vertical_boost = PickupManager.instance.blue_counter/100;
         horizontal_boost = PickupManager.instance.green_counter/100;
+        if (_movementInput.x < 0)
+        {
+            _sr.sprite = sprites[1];
+        }
+        else if (_movementInput.x > 0)
+        {
+            _sr.sprite = sprites[2];
+        }
+        else if (_movementInput.y > 0)
+        {
+            _sr.sprite = sprites[3];
+        }
+        else
+        {
+            _sr.sprite = sprites[0];
+        }
 
         transform.Translate(
             _movementInput.x * (horizontal_boost + _movementSpeedScale.x), 
