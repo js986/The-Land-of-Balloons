@@ -15,6 +15,8 @@ public class FloatingSineWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      transform.position = _startPosition + new Vector3(0.0f, Mathf.Sin(Time.time * freq) * magnitude, 0.0f);
+      var _newPosition = transform.position;
+      _newPosition.y += Mathf.Sin(Time.time * freq) * magnitude * Time.deltaTime;
+      transform.position = _newPosition;
     }
 }
