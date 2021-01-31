@@ -6,7 +6,7 @@ public class WindGust : MonoBehaviour
 {
     //Put WindGust on a seperate physics later from the gas Collectibles
 
-    [SerializeField] Vector3 direction = new Vector3(-1, 0,0);
+    public Vector3 direction = new Vector3(-1, 0,0);
     [SerializeField] float speed = 1.0f;
     [SerializeField] float attackVal = 5;
     GameObject player;
@@ -34,10 +34,6 @@ public class WindGust : MonoBehaviour
 
     }
 
-    public void SpawnGusts(GridManager.GridSquare current)
-    {
-        
-
-    }
+    
 
 }
