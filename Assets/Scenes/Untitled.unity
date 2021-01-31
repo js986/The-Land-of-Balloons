@@ -446,6 +446,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1257625584419207565, guid: fc52e0838ace53141b83007e30855657, type: 3}
   m_PrefabInstance: {fileID: 1257625584763042731}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &573720587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573720586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7a4a27991d4c74e9ee26c0f1d9ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  astroid_1: {fileID: 3928538488999518782, guid: 0fe22eea38b3a554f8f947bf9318cef0, type: 3}
+  astroid_2: {fileID: 5274991951682576449, guid: a815704da2688fb459f6df34d10e2e85, type: 3}
 --- !u!114 &573720599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,6 +741,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059326916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059326917}
+  m_Layer: 0
+  m_Name: SpaceLowerBound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059326917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059326916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7477083, y: 555, z: -28.988089}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176085123
 GameObject:
@@ -2056,6 +2101,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 987916930125166250, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 987916930125166250, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1257625584419207552, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -2148,6 +2201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1960640931662456518, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: lowerSpaceBound
+      value: 
+      objectReference: {fileID: 1059326916}
     - target: {fileID: 2868570271235564450, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: fuel_bar
       value: 

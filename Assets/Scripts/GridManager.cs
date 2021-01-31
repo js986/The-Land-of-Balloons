@@ -20,6 +20,7 @@ public class GridManager : MonoBehaviour
         }
     }
     [SerializeField] public List<GridSquare> grid;
+    [SerializeField] public GameObject lowerSpaceBound;
     public GridSquare current;
     public static GridManager instance;
     Vector3 position;
@@ -37,6 +38,7 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         position = this.transform.position;
+
         if (position.y > current.top_bound - 10)
         {
             current = new GridSquare(current.top_bound + 20, current.bottom_bound + 20, current.left_bound, current.right_bound);
@@ -44,6 +46,11 @@ public class GridManager : MonoBehaviour
             {
                 grid.Add(current);
                 PickupSpawner.instance.SpawnPickups(current);
+                if (transform.position.y > 535 && transform.position.y < 650)
+                {
+                    AstroidSpawner.instance.SpawnAstroid(current);
+                }
+
                 if (transform.position.y > 130 && transform.position.y < 260)
                 {
                     ThunderSpawner.instance.SpawnCloud(current);
