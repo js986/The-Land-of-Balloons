@@ -1686,5 +1686,13 @@ PrefabInstance:
       propertyPath: defense_bar
       value: 
       objectReference: {fileID: 1309198451}
+    - target: {fileID: 3227944897932169527, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: fuel_bar
+      value: 
+      objectReference: {fileID: 57319543}
+    - target: {fileID: 3227944897932169527, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: defense_bar
+      value: 
+      objectReference: {fileID: 1241444598}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc52e0838ace53141b83007e30855657, type: 3}

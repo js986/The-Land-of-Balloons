@@ -25,24 +25,40 @@ public class UpgradeManager : MonoBehaviour
 
     private void Update()
     {
-        
+        UpdateFuelBar();
     }
 
-    void UpdateBar(Slider bar, float magnitude)
+    void UpdateFuelBar()
     {
-        
+        fuel_bar.value -=0.02f;
     }
 
 
     void UpgradeDefense()
     {
-        max_defense += 2f;
+        max_defense += 50f;
+        defense_bar.maxValue += 50f;
+        defense_bar.value += 50f;
         defense_level++;
     }
 
     void UpgradeFuelCapacity()
     {
         max_fuel += 50f;
+        fuel_bar.value += 50f;
+        fuel_bar.maxValue += 50f;
         fuel_level++;
+    }
+
+    void SetDefense(float value)
+    {
+        defense = value;
+        defense_bar.value = value;
+    }
+
+    void SetFuel(float value)
+    {
+        fuel = value;
+        fuel_bar.value = value;
     }
 }
