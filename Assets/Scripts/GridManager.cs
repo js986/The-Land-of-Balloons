@@ -29,7 +29,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        current = new GridSquare(30, 10, -18, 19);
+        current = new GridSquare(10, 0, -18, 19);
         grid = new List<GridSquare>();
         grid.Add(current);
         PickupSpawner.instance.SpawnPickups(current, regions);
@@ -40,19 +40,19 @@ public class GridManager : MonoBehaviour
     {
         position = this.transform.position;
 
-        if (position.y > current.top_bound - 10)
+        if (position.y > current.top_bound - 15)
         {
-            current = new GridSquare(current.top_bound + 20, current.bottom_bound + 20, current.left_bound, current.right_bound);
+            current = new GridSquare(current.top_bound + 10, current.bottom_bound + 10, current.left_bound, current.right_bound);
             if (!grid.Contains(current))
             {
                 grid.Add(current);
                 PickupSpawner.instance.SpawnPickups(current,regions);
-                if (transform.position.y < regions[4].upperExitBound && transform.position.y > regions[3].lowerEntryBound +70)
+                if (current.top_bound < regions[4].upperExitBound && current.bottom_bound > regions[3].lowerEntryBound + 25)
                 {
                     AstroidSpawner.instance.SpawnAstroid(current);
                 }
 
-                if (transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound)
+                if (current.top_bound < regions[1].upperExitBound && current.bottom_bound > regions[1].lowerEntryBound)
                 {
                     ThunderSpawner.instance.SpawnCloud(current);
                 }
@@ -60,17 +60,17 @@ public class GridManager : MonoBehaviour
         }
 
         // Spawn enemies based on region, region list editable in inspector
-        if ((transform.position.y < regions[0].upperExitBound && transform.position.y > regions[0].lowerEntryBound) && 
+        if ((current.top_bound < regions[0].upperExitBound && current.bottom_bound > regions[0].lowerEntryBound) && 
             BirdSpawner.instance.UseCooldown())
         {
             BirdSpawner.instance.SpawnBird(current);
         }
-        else if(transform.position.y < regions[2].upperExitBound && transform.position.y > regions[2].lowerEntryBound && 
+        else if(current.top_bound < regions[2].upperExitBound && current.bottom_bound > regions[2].lowerEntryBound && 
             !WindGustSpawner.instance.isCooldown())
         {
             WindGustSpawner.instance.SpawnGusts(current);
         }
-        if (transform.position.y < regions[1].upperExitBound && transform.position.y > regions[1].lowerEntryBound)
+        if (current.top_bound < regions[1].upperExitBound && current.bottom_bound > regions[1].lowerEntryBound)
         {
             Rain.SetActive(true);
         }
