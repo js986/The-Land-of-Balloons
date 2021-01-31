@@ -95,3 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3a3740f67cd6445bd062de561e5b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freq: 5
+  magnitude: 10
+  speed: 0
+  LightningPrefab: {fileID: 6138035515320734797, guid: 92851000906eeb742b5848d1f0ffe843, type: 3}

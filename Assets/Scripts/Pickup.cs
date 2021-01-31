@@ -23,7 +23,7 @@ public class Pickup : MonoBehaviour
     }
     private void Update()
     {
-            if (this.transform.position.y < GridManager.instance.current.bottom_bound-40)
+            if (this.transform.position.y < GridManager.instance.current.bottom_bound-30)
             {
                 Destroy(this.gameObject);
             }

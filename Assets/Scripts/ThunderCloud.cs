@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class ThunderCloud : MonoBehaviour
 {
-    float top_bound;
-    float bottom_bound;
+    public float freq = 5;
+    public float magnitude = 10f;
     public float speed;
+    float ThunderDelay = 2.5f;
+    public GameObject LightningPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        top_bound = this.transform.position.y + 30;
-        bottom_bound = this.transform.position.y - 30;
-        speed = .10f;
+        StartCoroutine(ShootLightning());
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PickupManager.instance.transform.position.y > this.transform.position.y && this.transform.position.y < top_bound)
+        var _newPosition = transform.position;
+        _newPosition.y += Mathf.Sin(Time.time * freq) * magnitude * Time.deltaTime;
+        transform.position = _newPosition;
+        if (this.transform.position.y < GridManager.instance.current.bottom_bound - 30)
         {
-            transform.Translate(0, speed, 0);
-        }
-        if(PickupManager.instance.transform.position.y < this.transform.position.y && this.transform.position.y > bottom_bound) {
-            transform.Translate(0, -speed, 0);
+            Destroy(this.gameObject);
         }
     }
+        IEnumerator ShootLightning()
+        {
+
+            while (true)
+            {
+                yield return new WaitForSeconds(ThunderDelay);
+
+                Instantiate(LightningPrefab, transform.position, Quaternion.identity);
+            }
+        }
 }

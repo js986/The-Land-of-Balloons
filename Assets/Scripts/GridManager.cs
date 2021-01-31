@@ -27,7 +27,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        current = new GridSquare(50, 10, -9, 10);
+        current = new GridSquare(30, 10, -9, 10);
         grid = new List<GridSquare>();
         grid.Add(current);
         PickupSpawner.instance.SpawnPickups(current);
@@ -37,14 +37,14 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         position = this.transform.position;
-        if (position.y > current.top_bound - 20)
+        if (position.y > current.top_bound - 10)
         {
-            current = new GridSquare(current.top_bound + 40, current.bottom_bound + 40, current.left_bound, current.right_bound);
+            current = new GridSquare(current.top_bound + 20, current.bottom_bound + 20, current.left_bound, current.right_bound);
             if (!grid.Contains(current))
             {
                 grid.Add(current);
                 PickupSpawner.instance.SpawnPickups(current);
-                if (transform.position.y > 135 && transform.position.y < 275)
+                if (transform.position.y > 130 && transform.position.y < 260)
                 {
                     ThunderSpawner.instance.SpawnCloud(current);
                 }
