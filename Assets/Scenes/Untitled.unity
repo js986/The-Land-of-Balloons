@@ -441,59 +441,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea5bbde380a03742bdfbea08ac44e59, type: 3}
---- !u!1 &573720586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1257625584419207565, guid: fc52e0838ace53141b83007e30855657, type: 3}
-  m_PrefabInstance: {fileID: 1257625584763042731}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &573720587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573720586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d44e96116ad40f4cada7f1b7925148e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversitionFactor: 5
-  gasSprites:
-  - {fileID: 21300000, guid: c6d9447c165cc28449080486da32bf22, type: 3}
-  - {fileID: 21300000, guid: 3bb977a5cd91d2943a898eca89bcf423, type: 3}
-  - {fileID: 21300000, guid: 4d2acbd568959c84d85be88eff3cf20d, type: 3}
-  left: {fileID: 1109903622}
-  current: {fileID: 1109903621}
-  right: {fileID: 1109903620}
---- !u!114 &573720588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573720586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2608e5801d02d45a9784b36d11d386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  windFab: {fileID: 2620840912731438737, guid: 61f421677b6709d41bcec1d608d41768, type: 3}
-  windSpeed: 5
-  yRange: 5
---- !u!114 &573720599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573720586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c4804120170434e84e5a3657bd25ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloudprefab: {fileID: 8255660006980279442, guid: db03daebdff113b479732868c4531bcc, type: 3}
 --- !u!1 &610910215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,13 +2206,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1257625584419207552, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+    - target: {fileID: 987916930125166250, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1257625584419207552, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
+    - target: {fileID: 987916930125166250, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1257625584419207554, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: m_RootOrder
@@ -2315,26 +2262,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
-    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
-    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6d5622aba58bf9245a3cfb8c3ed1d178, type: 3}
-    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: sprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7f346fd46dc42614ea2fae88b124256b, type: 3}
-    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: sprites.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0be8dc73a9ba830459b6439f21d78f30, type: 3}
-    - target: {fileID: 1257625584419207559, guid: fc52e0838ace53141b83007e30855657, type: 3}
-      propertyPath: sprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: d875b8c7b52b5c344bf2157d1ee89a65, type: 3}
     - target: {fileID: 1257625584419207564, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: red_text
       value: 
@@ -2379,5 +2306,17 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8701657393245272499, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1109903622}
+    - target: {fileID: 8701657393245272499, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1109903620}
+    - target: {fileID: 8701657393245272499, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 1109903621}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc52e0838ace53141b83007e30855657, type: 3}

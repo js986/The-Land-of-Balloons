@@ -20,6 +20,9 @@ GameObject:
   - component: {fileID: 5306488171461712280}
   - component: {fileID: 1960640931662456518}
   - component: {fileID: 987916930125166250}
+  - component: {fileID: 8701657393245272499}
+  - component: {fileID: 4781051650793426409}
+  - component: {fileID: 3289491009132735327}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -144,13 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94eb9735f147f9c47a4f6101a39e704a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementInput: {x: 0, y: 0}
   _movementSpeedScale: {x: 0.1, y: 0.1}
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f77e3fa75ce547e429368d9b3147031d, type: 3}
+  - {fileID: 21300000, guid: 6d5622aba58bf9245a3cfb8c3ed1d178, type: 3}
+  - {fileID: 21300000, guid: 7f346fd46dc42614ea2fae88b124256b, type: 3}
+  - {fileID: 21300000, guid: 0be8dc73a9ba830459b6439f21d78f30, type: 3}
+  - {fileID: 21300000, guid: d875b8c7b52b5c344bf2157d1ee89a65, type: 3}
 --- !u!114 &3472989145160082163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +249,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: []
+  regions:
+  - name: Blue Skies
+    lowerEntryBound: 50
+    upperExitBound: 135
+  - name: 
+    lowerEntryBound: 135
+    upperExitBound: 275
+  - name: 
+    lowerEntryBound: 275
+    upperExitBound: 415
+  - name: 
+    lowerEntryBound: 415
+    upperExitBound: 555
+  - name: Space
+    lowerEntryBound: 555
+    upperExitBound: 690
   current:
     bottom_bound: 0
     left_bound: 0
@@ -279,3 +299,51 @@ PolygonCollider2D:
       - {x: 1, y: -4.7}
       - {x: 1.3, y: -3}
       - {x: -1.3, y: -3}
+--- !u!114 &8701657393245272499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d44e96116ad40f4cada7f1b7925148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversitionFactor: 5
+  gasSprites:
+  - {fileID: 21300000, guid: c6d9447c165cc28449080486da32bf22, type: 3}
+  - {fileID: 21300000, guid: 3bb977a5cd91d2943a898eca89bcf423, type: 3}
+  - {fileID: 21300000, guid: 4d2acbd568959c84d85be88eff3cf20d, type: 3}
+  left: {fileID: 0}
+  current: {fileID: 0}
+  right: {fileID: 0}
+--- !u!114 &4781051650793426409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2608e5801d02d45a9784b36d11d386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windFab: {fileID: 2620840912731438737, guid: 61f421677b6709d41bcec1d608d41768, type: 3}
+  windSpeed: 5
+  yRange: 5
+--- !u!114 &3289491009132735327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257625584419207565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c4804120170434e84e5a3657bd25ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudprefab: {fileID: 8255660006980279442, guid: db03daebdff113b479732868c4531bcc, type: 3}
