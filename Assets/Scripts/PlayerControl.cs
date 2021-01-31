@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static AlchemyMain;
 using static MasterControls;
 
 public class PlayerControl : MonoBehaviour, IMainActions
@@ -10,6 +11,8 @@ public class PlayerControl : MonoBehaviour, IMainActions
 
     [SerializeField]
     Vector2 _movementInput;
+    float _gasConvertInput;
+    // float _gasSwitchInput;
 
     float vertical_boost;
     float horizontal_boost;
@@ -18,6 +21,7 @@ public class PlayerControl : MonoBehaviour, IMainActions
     [SerializeField] Sprite[] sprites = new Sprite[5];
     SpriteRenderer _sr;
     Rigidbody2D _rb;
+    AlchemyMain _alchemySystem;
 
     void Awake()
     {
@@ -27,6 +31,7 @@ public class PlayerControl : MonoBehaviour, IMainActions
     void Start(){
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
+        _alchemySystem = GetComponent<AlchemyMain>();
         _sr.sprite = sprites[0];
     }
     private void OnEnable(){
@@ -64,13 +69,74 @@ public class PlayerControl : MonoBehaviour, IMainActions
 
         if (_movementInput.y > 0)
             _rb.velocity = Vector2.zero;
-    
+
+        // Gas conversion/switching input
+        if (_gasConvertInput > 0){
+                    print(_gasConvertInput);
+
+            _alchemySystem.convertCurrentGas(true);
+        }
+        else if (_gasConvertInput < 0){
+                print(_gasConvertInput);
+
+            _alchemySystem.convertCurrentGas(false);
+        }
+        // if (_gasSwitchInput > 0){
+        //     _alchemySystem.switchCurrentGas(false);
+        // }
+        // else if (_gasSwitchInput < 0){
+        //     _alchemySystem.switchCurrentGas(false);
+        // }
     }
 
     #region Action Handlers
-    public void OnMovement(InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext ctx)
     {
-        _movementInput = context.ReadValue<Vector2>();
+        _movementInput = ctx.ReadValue<Vector2>();
+    }
+
+    public void OnRefuel(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            _alchemySystem.upgradeTransaction(TradeType.Refuel);
+    }
+
+    public void OnRepair(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            _alchemySystem.upgradeTransaction(TradeType.Repair);
+    }
+
+    public void OnUpgradeDefense(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            _alchemySystem.upgradeTransaction(TradeType.UpgradeDefense);
+    }
+
+    public void OnUpgradeEngine(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            _alchemySystem.upgradeTransaction(TradeType.UpgradeDefense);
+    }
+
+    public void OnConvertGas(InputAction.CallbackContext ctx)
+    {
+        _gasConvertInput = ctx.ReadValue<float>();
+    }
+
+    public void OnSwitchGas(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed){
+            bool yes = true;
+            if (ctx.ReadValue<float>() > 0){
+                yes = true;
+            }
+            else if (ctx.ReadValue<float>() < 0){
+                yes = false;
+            }
+
+            _alchemySystem.switchCurrentGas(yes);
+        }
     }
     #endregion
 

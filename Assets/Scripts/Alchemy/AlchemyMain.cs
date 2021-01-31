@@ -60,16 +60,16 @@ public class AlchemyMain : MonoBehaviour
 
         //Testing system with placeholder controls bare with me
         //switchCurrentGas(false);
-        if(Keyboard.current.spaceKey.isPressed && !Keyboard.current.leftShiftKey.isPressed) convertCurrentGas(false);
-        else if (Keyboard.current.spaceKey.isPressed && Keyboard.current.leftShiftKey.isPressed) convertCurrentGas(true);
+        // if(Keyboard.current.spaceKey.isPressed && !Keyboard.current.leftShiftKey.isPressed) convertCurrentGas(false);
+        // else if (Keyboard.current.spaceKey.isPressed && Keyboard.current.leftShiftKey.isPressed) convertCurrentGas(true);
 
-        if (Keyboard.current.qKey.wasPressedThisFrame) switchCurrentGas(true);
-        else if (Keyboard.current.eKey.wasPressedThisFrame) switchCurrentGas(false);
+        // if (Keyboard.current.qKey.wasPressedThisFrame) switchCurrentGas(true);
+        // else if (Keyboard.current.eKey.wasPressedThisFrame) switchCurrentGas(false);
 
-        if (Keyboard.current.uKey.wasPressedThisFrame) upgradeTransaction(TradeType.Refuel);
-        if (Keyboard.current.iKey.wasPressedThisFrame) upgradeTransaction(TradeType.Repair);
-        if (Keyboard.current.oKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeDefense);
-        if (Keyboard.current.pKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeEngine);
+        // if (Keyboard.current.uKey.wasPressedThisFrame) upgradeTransaction(TradeType.Refuel);
+        // if (Keyboard.current.iKey.wasPressedThisFrame) upgradeTransaction(TradeType.Repair);
+        // if (Keyboard.current.oKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeDefense);
+        // if (Keyboard.current.pKey.wasPressedThisFrame) upgradeTransaction(TradeType.UpgradeEngine);
         /*
         if (Input.GetKeyDown(KeyCode.A)) switchCurrentGas(false);
         else if (Input.GetKeyDown(KeyCode.D)) switchCurrentGas(true);
@@ -78,9 +78,9 @@ public class AlchemyMain : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E)) convertCurrentGas(true);
         */
 
-        PickupManager.instance.green_counter = GreenGas;
-        PickupManager.instance.red_counter = RedGas;
-        PickupManager.instance.blue_counter = BlueGas;
+        // PickupManager.instance.green_counter = GreenGas;
+        // PickupManager.instance.red_counter = RedGas;
+        // PickupManager.instance.blue_counter = BlueGas;
     }
     //Transmutes from type to other type
     void transmute(GasType a,GasType b)
@@ -130,6 +130,10 @@ public class AlchemyMain : MonoBehaviour
                 BlueGas++;
                 break;
         }
+
+        PickupManager.instance.green_counter = GreenGas;
+        PickupManager.instance.red_counter = RedGas;
+        PickupManager.instance.blue_counter = BlueGas;
 
     }
 
@@ -193,7 +197,7 @@ public class AlchemyMain : MonoBehaviour
 
     }
 
-    void upgradeTransaction(TradeType trade)
+    public void upgradeTransaction(TradeType trade)
     {
         switch (trade)
         {
@@ -233,5 +237,9 @@ public class AlchemyMain : MonoBehaviour
                 }
                 break;
         }
+
+        PickupManager.instance.green_counter = GreenGas;
+        PickupManager.instance.red_counter = RedGas;
+        PickupManager.instance.blue_counter = BlueGas;
     }
 }
