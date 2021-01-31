@@ -14,8 +14,8 @@ public class PlayerControl : MonoBehaviour, IMainActions
     float _gasConvertInput;
     // float _gasSwitchInput;
 
-    float vertical_boost;
-    float horizontal_boost;
+    public float vertical_boost;
+    public float horizontal_boost;
 
     [SerializeField] Vector2 _movementSpeedScale = new Vector2(1,1);
     [SerializeField] Sprite[] sprites = new Sprite[5];
@@ -42,8 +42,11 @@ public class PlayerControl : MonoBehaviour, IMainActions
     }
 
     void FixedUpdate(){
-        vertical_boost = PickupManager.instance.blue_counter/100;
-        horizontal_boost = PickupManager.instance.green_counter/100;
+        //vertical_boost = PickupManager.instance.blue_counter/100;
+        //horizontal_boost = PickupManager.instance.green_counter/100;
+        vertical_boost = Mathf.Exp(0.0009f * PickupManager.instance.blue_counter);
+        horizontal_boost = Mathf.Exp(0.0009f * PickupManager.instance.green_counter);
+
         if (_movementInput.x < 0)
         {
             _sr.sprite = sprites[1];
@@ -62,8 +65,8 @@ public class PlayerControl : MonoBehaviour, IMainActions
         }
 
         transform.Translate(
-            _movementInput.x * (horizontal_boost + _movementSpeedScale.x), 
-            _movementInput.y * (vertical_boost + _movementSpeedScale.y), 
+            _movementInput.x * (horizontal_boost * _movementSpeedScale.x), 
+            _movementInput.y * (vertical_boost * _movementSpeedScale.y), 
             0
         );
 

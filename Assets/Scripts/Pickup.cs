@@ -11,10 +11,10 @@ public class Pickup : MonoBehaviour
         switch (this.gameObject.tag)
         {
             case "Red":
-                volume = 15;
+                volume = 5;
                 break;
             case "Blue":
-                volume = 10;
+                volume = 5;
                 break;
             case "Green":
                 volume = 5;
