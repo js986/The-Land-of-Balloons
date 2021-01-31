@@ -35,6 +35,10 @@ public class PickupManager : MonoBehaviour
         {
             red_counter--;
             _um.SetFuel(_um.fuel + 5);
+        }else if((_um.fuel < 0 && red_counter <= 0) || _um.defense < 0)
+        {
+            //Lose condition goes here
+            print("GAME OVER!!!!!");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
