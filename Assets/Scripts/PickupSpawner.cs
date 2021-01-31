@@ -24,7 +24,7 @@ public class PickupSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        altitude = (int)this.transform.position.y * 10;
+        altitude = (int)this.transform.position.y * 200;
         altitude_text.text = "Altitude: " + altitude.ToString()+ " ft";
     }
 
