@@ -7,7 +7,7 @@ public class WindGust : MonoBehaviour
     //Put WindGust on a seperate physics later from the gas Collectibles
 
     public Vector3 direction = new Vector3(-1, 0,0);
-    [SerializeField] float speed = 1.0f;
+    public float speed = 1.0f;
     [SerializeField] float attackVal = 5;
     GameObject player;
     // Start is called before the first frame update
