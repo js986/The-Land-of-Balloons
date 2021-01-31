@@ -251,18 +251,18 @@ MonoBehaviour:
   grid: []
   regions:
   - name: Blue Skies
-    lowerEntryBound: 50
+    lowerEntryBound: 20
     upperExitBound: 135
-  - name: 
+  - name: Storm
     lowerEntryBound: 135
     upperExitBound: 275
-  - name: 
+  - name: Upper Atmosphere
     lowerEntryBound: 275
     upperExitBound: 415
-  - name: 
+  - name: Radioactive Zone
     lowerEntryBound: 415
     upperExitBound: 555
-  - name: Space
+  - name: Near Space
     lowerEntryBound: 555
     upperExitBound: 690
   current:
