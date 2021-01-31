@@ -441,6 +441,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea5bbde380a03742bdfbea08ac44e59, type: 3}
+--- !u!1 &573720586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1257625584419207565, guid: fc52e0838ace53141b83007e30855657, type: 3}
+  m_PrefabInstance: {fileID: 1257625584763042731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &573720599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573720586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c4804120170434e84e5a3657bd25ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudprefab: {fileID: 8255660006980279442, guid: db03daebdff113b479732868c4531bcc, type: 3}
 --- !u!1 &610910215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 386b8ea9afa093a40b241b512eff3d03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2041,6 +2059,10 @@ PrefabInstance:
     - target: {fileID: 1257625584419207552, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257625584419207552, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1257625584419207554, guid: fc52e0838ace53141b83007e30855657, type: 3}
       propertyPath: m_RootOrder
