@@ -27,7 +27,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        current = new GridSquare(50, 10, -8, 8);
+        current = new GridSquare(50, 10, -9, 10);
         grid = new List<GridSquare>();
         grid.Add(current);
         PickupSpawner.instance.SpawnPickups(current);
@@ -46,5 +46,14 @@ public class GridManager : MonoBehaviour
                 PickupSpawner.instance.SpawnPickups(current);
             }
         }
+
+        if (transform.position.y < 135 && BirdSpawner.instance.UseCooldown()){
+            BirdSpawner.instance.SpawnBird(current);
+        }
+    }
+
+    void OnDrawGizmos(){
+
+        Gizmos.DrawCube( new Vector3 ( current.left_bound + 9, current.top_bound - 20, 0 ), new Vector3(9, 20, 0));
     }
 }

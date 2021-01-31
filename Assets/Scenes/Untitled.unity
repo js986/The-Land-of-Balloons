@@ -863,8 +863,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186218022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -13.5, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1405,29 +1405,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488674491}
   m_CullTransparentMesh: 1
---- !u!1 &1493889623 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1257625584419207565, guid: fc52e0838ace53141b83007e30855657, type: 3}
-  m_PrefabInstance: {fileID: 1257625584763042731}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1493889624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493889623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec95877943035134b84b0d24262fd00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: []
-  current:
-    bottom_bound: 0
-    left_bound: 0
-    right_bound: 0
-    top_bound: 0
 --- !u!1 &1526213061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,5 +2146,13 @@ PrefabInstance:
       propertyPath: altitude_text
       value: 
       objectReference: {fileID: 1469333089}
+    - target: {fileID: 4070153274956371416, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070153274956371416, guid: fc52e0838ace53141b83007e30855657, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc52e0838ace53141b83007e30855657, type: 3}
