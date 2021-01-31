@@ -8,6 +8,7 @@ using static MasterControls;
 public class PlayerControl : MonoBehaviour, IMainActions
 {
     MasterControls input;
+    public bool moveable = true;
 
     [SerializeField]
     Vector2 _movementInput;
@@ -42,6 +43,11 @@ public class PlayerControl : MonoBehaviour, IMainActions
     }
 
     void FixedUpdate(){
+
+        if (!moveable){
+            _rb.velocity = Vector3.zero;
+            return;
+            }
         //vertical_boost = PickupManager.instance.blue_counter/100;
         //horizontal_boost = PickupManager.instance.green_counter/100;
         vertical_boost = Mathf.Exp(0.0009f * PickupManager.instance.blue_counter);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndBalloon : MonoBehaviour
 {
+    public GameObject endScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,8 @@ public class EndBalloon : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
 
         if (col.CompareTag("Player")){
+            endScene.SetActive(true);
+            col.GetComponent<PlayerControl>().moveable = false;
             print ("end");
         }
 
