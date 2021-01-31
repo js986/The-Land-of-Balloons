@@ -1,26 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PickupSpawner : MonoBehaviour
 {
-    [System.Serializable]
-    public struct GridSquare
-    {
-        public int bottom_bound;
-        public int left_bound;
-        public int right_bound;
-        public int top_bound;
-        public GridSquare(int top, int bottom,int left,int right)
-        {
-            this.bottom_bound = bottom;
-            this.left_bound = left;
-            this.right_bound = right;
-            this.top_bound = top;
-        }
-    }
-    [SerializeField] public List<GridSquare> grid;
-    Vector3 position;
+    public static PickupSpawner instance;
     int rand_x;
     int rand_y;
     int rand_num;
@@ -28,48 +12,27 @@ public class PickupSpawner : MonoBehaviour
     public GameObject Red_Gas;
     public GameObject Blue_Gas;
     public GameObject Green_Gas;
-    public GridSquare current;
-    public static PickupSpawner instance;
+    public int altitude;
+    public Text altitude_text;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
-        current = new GridSquare(20, -20, -10, 10);
-        SpawnPickups(current);
-        grid = new List<GridSquare>();
-        grid.Add(current);
+        altitude = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        position = this.transform.position;
-        if (position.y > current.top_bound)
-        {
-            current = new GridSquare(current.top_bound+40, current.bottom_bound+40, current.left_bound, current.right_bound);
-            if (!grid.Contains(current))
-            {
-                grid.Add(current);
-                SpawnPickups(current);
-            }
-        }
-        if (position.y < current.bottom_bound)
-        {
-            current = new GridSquare(current.top_bound-40, current.bottom_bound-40, current.left_bound, current.right_bound);
-            if (!grid.Contains(current))
-            {
-                grid.Add(current);
-                SpawnPickups(current);
-            }
-        }
-
+        altitude = (int)this.transform.position.y * 10;
+        altitude_text.text = "Altitude: " + altitude.ToString()+ " ft";
     }
 
-    void SpawnPickups(GridSquare current)
+    public void SpawnPickups(GridManager.GridSquare current)
     {
         List<Vector3> pos_arr = new List<Vector3>();
         Vector3 pos;
-        rand_num = Random.Range(20, 41);
+        rand_num = Random.Range(25, 36);
         for (int i = 0; i < rand_num; i++)
         {
             do
