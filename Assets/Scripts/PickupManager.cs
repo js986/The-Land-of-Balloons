@@ -13,6 +13,7 @@ public class PickupManager : MonoBehaviour
     public Text blue_text;
     public Text red_text;
 
+    [SerializeField] GameObject gameOver;
     public UpgradeManager _um;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class PickupManager : MonoBehaviour
         blue_counter = 0;
         red_counter = 0;
         _um = this.GetComponent<UpgradeManager>();
+        gameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class PickupManager : MonoBehaviour
         {
             //Lose condition goes here
             print("GAME OVER!!!!!");
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
