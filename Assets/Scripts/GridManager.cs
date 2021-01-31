@@ -29,7 +29,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        current = new GridSquare(30, 10, -9, 10);
+        current = new GridSquare(30, 10, -18, 19);
         grid = new List<GridSquare>();
         grid.Add(current);
         PickupSpawner.instance.SpawnPickups(current, regions);
