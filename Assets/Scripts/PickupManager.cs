@@ -30,6 +30,12 @@ public class PickupManager : MonoBehaviour
         green_text.text = green_counter.ToString();
         blue_text.text = blue_counter.ToString();
         red_text.text = red_counter.ToString();
+
+        if(_um.fuel < 0 && red_counter > 0)
+        {
+            red_counter--;
+            _um.SetFuel(_um.fuel + 5);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,7 +46,7 @@ public class PickupManager : MonoBehaviour
             {
                 case "Red":
                     red_counter += gas.volume;
-                    _um.SetFuel(_um.fuel + 5.0f);
+                    //_um.SetFuel(_um.fuel + 5.0f);
                     break;
                 case "Green":
                     green_counter += gas.volume;
