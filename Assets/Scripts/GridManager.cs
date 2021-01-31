@@ -27,7 +27,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        current = new GridSquare(50, 10, -8, 8);
+        current = new GridSquare(50, 10, -9, 10);
         grid = new List<GridSquare>();
         grid.Add(current);
         PickupSpawner.instance.SpawnPickups(current);
